@@ -1,0 +1,226 @@
+.about-section {
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.521) 0%, black 70%, black 100%);
+}
+
+/* Velocity Text Spacing */
+.velocity-text {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+
+/* White Background Layer - Fades in during zoom */
+.white-background-layer {
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    z-index: 0;
+    opacity: 0;
+}
+
+/* Main Content Container */
+.about-content {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
+}
+
+.about-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    text-align: left;
+}
+
+.about-title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    font-family: var(--font-satoshi), sans-serif;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.highlight-text {
+    color: #ff9eb5;
+    display: block;
+}
+
+.about-subtitle {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    font-family: var(--font-satoshi), sans-serif;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-align: right;
+}
+
+/* GRID BACKGROUND */
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-background {
+    position: absolute;
+    inset: 0;
+    background-size: 50px 50px;
+    opacity: 0.8;
+}
+
+.background-text-about {
+    position: relative;
+    font-size: 100px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.774);
+    text-transform: capitalize;
+    letter-spacing: -0.02em;
+    margin: 0;
+    user-select: none;
+    z-index: 2;
+    text-decoration-line: underline;
+    text-decoration-thickness: 20px;
+    text-underline-offset: 6px;
+}
+
+/* AboutScene2 Content Inline */
+.about-scene2-inline {
+    position: relative;
+    z-index: 15;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    opacity: 0;
+}
+
+.about-scene2-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #000000;
+    font-family: var(--font-satoshi), sans-serif;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.about-scene2-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-scene2-text p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #333333;
+    font-family: var(--font-satoshi), sans-serif;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .about-title,
+    .about-subtitle {
+        font-size: 3.5rem;
+    }
+
+    .about-content {
+        padding: 0 2rem;
+    }
+
+    .background-text-about {
+        font-size: 80px;
+    }
+
+    .about-scene2-title {
+        font-size: 3rem;
+    }
+
+    .about-scene2-text p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        height: 150vh;
+    }
+
+    .about-title,
+    .about-subtitle {
+        font-size: 2.5rem;
+    }
+
+    .about-text-container {
+        gap: 1.5rem;
+    }
+
+    .about-content {
+        padding: 0 1.5rem;
+    }
+
+    .background-text-about {
+        font-size: 60px;
+    }
+
+
+
+    .about-scene2-inline {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-scene2-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-scene2-text p {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-title,
+    .about-subtitle {
+        font-size: 2rem;
+    }
+
+    .about-text-container {
+        gap: 1rem;
+    }
+
+    .background-text-about {
+        font-size: 50px;
+    }
+
+    .about-scene2-title {
+        font-size: 2rem;
+    }
+
+    .about-scene2-text p {
+        font-size: 1rem;
+    }
+}

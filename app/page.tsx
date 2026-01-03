@@ -4,10 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Hero from "@/app/sub-component/hero/hero";
 import PillNav from "@/components/PillNav";
-import SocialButtons from "@/components/SocialButtons";
+
 import Preloader from "@/components/Preloader";
 import LenisProvider from "@/components/LenisProvider";
 import logo from '@/public/logo.webp';
+import About from '@/app/sub-component/About/about';
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +29,8 @@ export default function Home() {
 
       {!isLoading && (
         <LenisProvider>
+          <ScrollProgressBar />
+
           <PillNav
             logo={logo.src}
             logoAlt="Company Logo"
@@ -45,9 +49,12 @@ export default function Home() {
             pillTextColor="#ffffffff"
           />
 
-          <SocialButtons />
+
 
           <Hero startAnimations={startHeroAnimations} />
+
+          <About startAnimations={startHeroAnimations} />
+
         </LenisProvider>
       )}
     </>

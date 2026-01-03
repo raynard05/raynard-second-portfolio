@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import "./hero.css";
 import { BBH_Bartle } from "next/font/google";
-
+import SocialButtons from "@/components/SocialButtons";
 const bbhBartle = BBH_Bartle({
     subsets: ["latin"],
     weight: "400",
@@ -87,6 +87,7 @@ export default function Hero({ startAnimations = false }: HeroProps) {
 
     return (
         <section id="hero" className="hero-section">
+            <SocialButtons />
             <div className="hero-content">
                 <div className="hero-left">
                     <h1 ref={heroTitleRef} className="hero-title" style={{ opacity: startAnimations ? 1 : 0 }}>
@@ -119,7 +120,7 @@ export default function Hero({ startAnimations = false }: HeroProps) {
             {/* Grid Background with Text */}
             <div className="hero-background">
                 <div className="grid-background"></div>
-                <h1 className={`background-text ${bbhBartle.className} `}>RAYOXELBOT</h1>
+                <h1 className={`background-text ${bbhBartle.className} `}>RAYOXELBOT.</h1>
             </div>
 
             <div ref={splineRef} className="hero-spline" style={{ opacity: startAnimations ? 1 : 0 }}>

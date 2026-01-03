@@ -1,5 +1,5 @@
 .social-buttons {
-    position: fixed;
+    position: absolute;
     top: 2em;
     left: 3em;
     z-index: 1000;

@@ -1,7 +1,15 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, createContext, useContext } from 'react';
 import Lenis from '@studio-freight/lenis';
+
+interface LenisContextType {
+    lenis: Lenis | null;
+}
+
+const LenisContext = createContext<LenisContextType>({ lenis: null });
+
+export const useLenis = () => useContext(LenisContext);
 
 interface LenisProviderProps {
     children: React.ReactNode;
@@ -38,5 +46,9 @@ export default function LenisProvider({ children }: LenisProviderProps) {
         };
     }, []);
 
-    return <>{children}</>;
+    return (
+        <LenisContext.Provider value={{ lenis: lenisRef.current }}>
+            {children}
+        </LenisContext.Provider>
+    );
 }

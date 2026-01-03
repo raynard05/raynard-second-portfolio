@@ -1,0 +1,30 @@
+
+                    <div className="about-description">
+                        <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed">
+                            I'm a passionate developer who loves creating beautiful and functional web experiences.
+                            With expertise in modern web technologies, I bring ideas to life through code.
+                        </p>
+                    </div>
+
+                    <ScrollFloat
+                        containerClassName="text-center mt-16"
+                        textClassName="font-bold text-black"
+                        stagger={0.5}
+                    >
+                        My Skills
+                    </ScrollFloat>
+
+                    <div className="skills-grid">
+                        <div className="skill-card">
+                            <h3 className="text-xl font-bold mb-2">Frontend</h3>
+                            <p className="text-gray-700">React, Next.js, TypeScript, GSAP</p>
+                        </div>
+                        <div className="skill-card">
+                            <h3 className="text-xl font-bold mb-2">Design</h3>
+                            <p className="text-gray-700">UI/UX, Animation, Responsive Design</p>
+                        </div>
+                        <div className="skill-card">
+                            <h3 className="text-xl font-bold mb-2">Tools</h3>
+                            <p className="text-gray-700">Git, VS Code, Figma</p>
+                        </div>
+                    </div>

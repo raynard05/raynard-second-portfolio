@@ -6,7 +6,9 @@ import { Anton } from "next/font/google";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import ScrollFloat from "@/components/ScrollFloat";
+import { Particles } from "@/components/ui/particles";
+import Noise from "@/components/Noise";
 gsap.registerPlugin(ScrollTrigger);
 
 const bbhBartle = BBH_Bartle({
@@ -44,8 +46,8 @@ export default function About() {
             // Zoom animation - scales and translates to focus on "ABOUT ME" text (letter U)
             tl.to(zoomContainerRef.current, {
                 scale: 70,
-                x: "10%", // Adjust to center on U
-                y: "-80%", // Moved down more
+                x: "1%", // Adjust to center on U
+                y: "-150%", // Moved down more
                 duration: 1,
             }, 0);
 
@@ -67,27 +69,60 @@ export default function About() {
     }, []);
 
     return (
-        <section id="about" className="about-section" ref={sectionRef}>
-            {/* White expanding background */}
-            <div className="white-bg-container" ref={whiteBgRef}></div>
+        <>
+            {/* Zoom Animation Section */}
+            <section id="about" className="about-section" ref={sectionRef}>
+                {/* Noise effect for black background */}
+                <Noise
+                    patternSize={500}
+                    patternAlpha={20}
+                    patternRefreshInterval={3}
+                />
 
-            {/* Zoom container */}
-            <div className="zoom-container" ref={zoomContainerRef}>
-                {/* Grid Background with Text */}
-                <div className="hero-background">
-                    <div className="grid-background"></div>
-                    <div className="about-titletext-container">
-                        <h1 className={`about-title1 ${anton.className}`}>LET'S GET TO </h1>
-                        <span className={`about-title2 text-yellow-500 ${anton.className}`}>KNOW ME  </span>
+                {/* White expanding background */}
+                <div className="white-bg-container" ref={whiteBgRef}></div>
+
+                {/* Zoom container */}
+                <div className="zoom-container" ref={zoomContainerRef}>
+                    {/* Grid Background with Text */}
+                    <div className="hero-background">
+                        <div className="grid-background"></div>
+                        <div className="about-titletext-container">
+                            <h1 className={`about-title1 ${anton.className}`}>LET'S GET TO </h1>
+                            <span className={`about-title2 text-yellow-500 ${anton.className}`}>KNOW ME  </span>
+                        </div>
+
+                        <div className="aboutbottom-titletext-container">
+                            <h1 className={`about-title1 ${anton.className}`}>AM I FINALLY A <span className="text-yellow-500"> HACKER ?</span></h1>
+                        </div>
+
+                        <h1 className={`background-text-about ${bbhBartle.className}`}>[1] ABOUT ME.</h1>
                     </div>
-
-                    <div className="aboutbottom-titletext-container">
-                        <h1 className={`about-title1 ${anton.className}`}>AM I FINALLY A <span className="text-yellow-500"> HACKER ?</span></h1>
-                    </div>
-
-                    <h1 className={`background-text-about ${bbhBartle.className}`}>ABOUT ME.</h1>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* Content Section - Appears after white background */}
+            <section className="about-content-section">
+                <Particles
+                    className="absolute inset-0 w-full h-full"
+                    quantity={150}
+                    ease={80}
+                    color="#000000"
+                    refresh={false}
+                    size={0.8}
+                />
+                <div className="about-content-wrapper">
+                    <ScrollFloat
+                        containerClassName="float-text"
+                        textClassName="font-bold text-black text-6xl md:text-[200px] lg:text-8xl"
+                        stagger={0.03}
+
+                    >
+                        1. About Me.
+                    </ScrollFloat>
+
+                </div>
+            </section>
+        </>
     );
 }

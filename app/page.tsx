@@ -4,13 +4,20 @@ import { useState } from "react";
 import Image from "next/image";
 import Hero from "@/app/sub-component/hero/hero";
 import PillNav from "@/components/PillNav";
-
+import ScrollVelocity from "@/components/ScrollVelocity";
 import Preloader from "@/components/Preloader";
 import LenisProvider from "@/components/LenisProvider";
 import logo from '@/public/logo.webp';
 import About from '@/app/sub-component/About/about';
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import { BBH_Bartle } from "next/font/google";
 
+
+const bbhBartle = BBH_Bartle({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [startHeroAnimations, setStartHeroAnimations] = useState(false);
@@ -52,8 +59,12 @@ export default function Home() {
 
 
           <Hero startAnimations={startHeroAnimations} />
-
-          <About startAnimations={startHeroAnimations} />
+          <ScrollVelocity
+            texts={['Get to know me ', '  Scroll Down ', " RAYOXEL "]}
+            velocity={80}
+            className={`velocity-text ${bbhBartle.className} `}
+          />
+          <About />
 
         </LenisProvider>
       )}

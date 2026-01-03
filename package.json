@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pages:build": "next build",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy out",
+    "pages:dev": "wrangler pages dev out"
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",

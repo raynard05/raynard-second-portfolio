@@ -11,7 +11,8 @@ import ScrollFloat from "@/components/ScrollFloat";
 import { Particles } from "@/components/ui/particles";
 import Noise from "@/components/Noise";
 import Spline from "@splinetool/react-spline";
-
+import SplitText from "@/components/SplitText";
+import MetaBalls from "@/components/MetaBalls";
 gsap.registerPlugin(ScrollTrigger);
 
 const bbhBartle = BBH_Bartle({
@@ -35,7 +36,7 @@ const LinePath = ({
     // window animasi yang stabil
     const pathLength = useTransform(
         scrollYProgress,
-        [0.01, 1.5],
+        [0.01, 1],
         [0, 1],
         { clamp: true }
     );
@@ -77,6 +78,7 @@ export default function About() {
     const zoomContainerRef = useRef<HTMLDivElement>(null);
     const whiteBgRef = useRef<HTMLDivElement>(null);
     const contentWrapperRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
 
     // Track scroll progress specifically for the about-content-wrapper section
     const { scrollYProgress } = useScroll({
@@ -129,6 +131,39 @@ export default function About() {
         return () => ctx.revert();
     }, []);
 
+    // Image animation - slide in from left when visible
+    useEffect(() => {
+        if (!imageRef.current) return;
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(
+                imageRef.current,
+                {
+                    x: -200,
+                    opacity: 0,
+                    scale: 0.9,
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: imageRef.current,
+                        start: "top 80%",
+                        end: "top 50%",
+                        toggleActions: "play none none none",
+                        once: true,
+                        invalidateOnRefresh: true,
+                    },
+                }
+            );
+        }, imageRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <>
 
@@ -137,7 +172,7 @@ export default function About() {
                 {/* Noise effect for black background */}
                 <Noise
                     patternSize={500}
-                    patternAlpha={40}
+                    patternAlpha={30}
                     patternRefreshInterval={3}
                 />
 
@@ -185,17 +220,46 @@ export default function About() {
                         className="absolute inset-0  lg:mt-[-100px]"
                         scrollYProgress={scrollYProgress}
                     />
-                    <ScrollFloat
-                        containerClassName="float-text"
-                        textClassName="font-bold text-black text-6xl md:text-[200px] lg:text-8xl"
-                        stagger={0.07}
-                        scrollStart="top 50%"
-                        scrollEnd="bottom 20%"
-                    >
-                        1. ABOUT ME.
-                    </ScrollFloat>
+
+                    <SplitText
+                        text="1. ABOUT ME."
+                        delay={80}
+                        duration={1.9}
+                        className="float-text"
+                    />
+
+                    {/* Flex container untuk gambar dan teks */}
+                    <div className="about-content-flex">
+
+                        <div className="about-content-image" ref={imageRef}>
+                            <img src="/profilku.jpg" alt="" />
+                        </div>
+                        <div className="about-scene-text">
+                            <h3>"  I'm Raynard Aurelio (Rayoxel), a creative Web Developer and Software Engineer shaping ideas through code and visual rhythm.
+                                <span></span> <br />I blend logic and aesthetics, turning interfaces into expressive, functional digital experiences.
+                                <span></span> <br />Driven by problem-solving, I deconstruct complexity into elegant, scalable systems.
+                                <span></span><br />I build with intention — performance, structure, and clarity at the core of every line.
+                                <span></span><br /> Curious by nature, I design and engineer products that feel alive, purposeful, and human.  "</h3>
+                        </div>
+                    </div>
 
 
+                </div>
+                <div>
+
+
+                </div>
+                <div className="metaballs-container">
+                    <MetaBalls
+                        color="#000000ff"
+                        cursorBallColor="#000000ff"
+                        speed={0.6}
+                        animationSize={28}
+                        hoverSmoothness={0.129}
+                        cursorBallSize={3}
+                        enableTransparency={true}
+                        enableMouseInteraction={true}
+                    />
                 </div>
             </section>
         </>

@@ -32,7 +32,7 @@
 .about-content-section {
     position: relative;
     width: 100%;
-    min-height: 400vh;
+    min-height: 180vh;
     background: white;
     padding: 8rem 2rem;
     z-index: 10;
@@ -283,6 +283,106 @@
     .float-text span {
         font-size: 3rem !important;
     }
+}
+
+/* SplitText Character Spacing */
+.float-text .split-char {
+    display: inline-block;
+    letter-spacing: 0.05em;
+}
+
+/* Preserve spaces in SplitText */
+.float-text .split-parent {
+    white-space: pre-wrap;
+}
+
+/* Flex Container untuk Gambar dan Teks */
+.about-content-flex {
+    display: flex;
+    gap: 10rem;
+    align-items: flex-start;
+    margin-top: 30rem;
+
+}
+
+/* About Content Image Container */
+.about-content-image {
+
+    width: 100%;
+    max-width: 500px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+}
+
+.about-content-image img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 30px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* About Scene Text - Sebelah Kanan Gambar */
+.about-scene-text {
+    flex: 1;
+    padding: 2rem 0;
+
+}
+
+.about-scene-text h3 {
+    font-size: 30px;
+    line-height: 1.2;
+    color: #000000;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Responsive untuk image */
+@media (max-width: 1024px) {
+    .about-content-flex {
+        gap: 3rem;
+    }
+
+    .about-content-image {
+        max-width: 450px;
+    }
+
+    .about-scene-text h3 {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-content-image {
+        max-width: 400px;
+    }
+
+    .about-scene-text h3 {
+        font-size: 1rem;
+    }
+}
+
+
+/* MetaBalls Container - Position to Right */
+.metaballs-container {
+    position: absolute;
+
+
+    transform: translateY(-60%) translateX(380%);
+    width: 400px;
+    height: 400px;
+    pointer-events: auto;
+    z-index: 5;
 }
 
 

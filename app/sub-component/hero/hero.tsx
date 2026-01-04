@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import "./hero.css";
 import { BBH_Bartle } from "next/font/google";
 import SocialButtons from "@/components/SocialButtons";
+import Noise from "@/components/Noise";
 const bbhBartle = BBH_Bartle({
     subsets: ["latin"],
     weight: "400",
@@ -87,6 +88,11 @@ export default function Hero({ startAnimations = false }: HeroProps) {
 
     return (
         <section id="hero" className="hero-section">
+            <Noise
+                patternSize={300}
+                patternAlpha={20}
+                patternRefreshInterval={3}
+            />
             <SocialButtons />
             <div className="hero-content">
                 <div className="hero-left">

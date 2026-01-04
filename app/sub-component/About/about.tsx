@@ -10,6 +10,7 @@ import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import ScrollFloat from "@/components/ScrollFloat";
 import { Particles } from "@/components/ui/particles";
 import Noise from "@/components/Noise";
+import Spline from "@splinetool/react-spline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,12 +51,22 @@ const LinePath = ({
             className={className}
         >
             <motion.path
-                d=""
-                stroke="#000"
+                d="M -1100 600
+C 0 500, 200 720, 600 560
+S 900 360, 700 520
+S 1500 820, 1800 600
+S 2100 1200, 2400 1000
+S 2100 1200, 2400 1000
+S 2100 1200, 2400 1000
+
+"
+
+                stroke="#fffb00ff"
                 strokeWidth="20"
                 style={{
                     pathLength,
                     strokeDashoffset: useTransform(pathLength, v => 1 - v),
+
                 }}
             />
         </svg>
@@ -86,14 +97,18 @@ export default function About() {
                     end: "+=2000", // Extended scroll distance for smooth reveal
                     scrub: true,
                     pin: true,
+                    onLeave: () => {
+                        // Refresh ScrollTrigger setelah pin selesai
+                        ScrollTrigger.refresh();
+                    },
                 },
             });
 
             // Zoom animation - scales and translates to focus on "ABOUT ME" text (letter U)
             tl.to(zoomContainerRef.current, {
                 scale: 70,
-                x: "1%", // Adjust to center on U
-                y: "-150%", // Moved down more
+                x: "-130%", // Adjust to center on U
+                y: "-290%", // Moved down more
                 duration: 1,
             }, 0);
 
@@ -116,12 +131,13 @@ export default function About() {
 
     return (
         <>
+
             {/* Zoom Animation Section */}
             <section id="about" className="about-section" ref={sectionRef}>
                 {/* Noise effect for black background */}
                 <Noise
                     patternSize={500}
-                    patternAlpha={20}
+                    patternAlpha={40}
                     patternRefreshInterval={3}
                 />
 
@@ -152,6 +168,10 @@ export default function About() {
             {/* Content Section - Appears after white background */}
             <section className="about-content-section">
                 <div className="gridsection-background"></div>
+
+                {/* Spline 3D Background - Fixed */}
+
+
                 <Particles
                     className="absolute inset-0 w-full h-full"
                     quantity={150}
@@ -162,18 +182,19 @@ export default function About() {
                 />
                 <div className="about-content-wrapper" ref={contentWrapperRef}>
                     <LinePath
-                        className="absolute inset-0"
+                        className="absolute inset-0  lg:mt-[-100px]"
                         scrollYProgress={scrollYProgress}
                     />
                     <ScrollFloat
                         containerClassName="float-text"
                         textClassName="font-bold text-black text-6xl md:text-[200px] lg:text-8xl"
-                        stagger={0.04}
-
-
+                        stagger={0.07}
+                        scrollStart="top 50%"
+                        scrollEnd="bottom 20%"
                     >
-                        1. About Me.
+                        1. ABOUT ME.
                     </ScrollFloat>
+
 
                 </div>
             </section>

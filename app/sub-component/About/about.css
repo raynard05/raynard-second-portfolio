@@ -41,12 +41,23 @@
     /* Ensure particles don't overflow */
 }
 
+/* Spline 3D Background - Fixed in place */
+.spline-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
 .about-content-wrapper {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    z-index: 1;
-    /* Content above particles */
+    z-index: 10;
+    /* Content above Spline and particles */
 }
 
 .about-description {
@@ -158,7 +169,7 @@
 
 .background-text-about {
     position: relative;
-    top: -10px;
+    top: 20px;
     font-size: 100px;
     font-weight: 700;
     color: rgb(255, 255, 255);
@@ -243,9 +254,35 @@
 
 
 
+/* ScrollFloat Container */
 .float-text {
-    font-size: 3rem;
-    color: yellow;
+    /* Container styles - ini akan mempengaruhi <h2> */
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+/* ScrollFloat Text - Target span di dalam container */
+.float-text span {
+    /* Override Tailwind classes - gunakan !important hanya untuk properties yang TIDAK di-animasi GSAP */
+    font-size: 10rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: black !important;
+    /* JANGAN gunakan !important untuk opacity, transform, atau properties yang di-animasi */
+}
+
+/* ScrollFloat Individual Characters - PENTING: Jangan override opacity/transform di sini */
+.float-text span .inline-block {
+    /* Style untuk setiap karakter - biarkan GSAP mengontrol opacity dan transform */
+    color: inherit;
+    /* Jangan tambahkan opacity atau transform di sini! */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .float-text span {
+        font-size: 3rem !important;
+    }
 }
 
 

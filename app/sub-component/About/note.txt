@@ -28,3 +28,25 @@
                             <p className="text-gray-700">Git, VS Code, Figma</p>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+                     <div className="metaballs-container">
+                    <MetaBalls
+                        color="#000000ff"
+                        cursorBallColor="#000000ff"
+                        speed={0.6}
+                        animationSize={28}
+                        hoverSmoothness={0.129}
+                        cursorBallSize={3}
+                        enableTransparency={true}
+                        enableMouseInteraction={true}
+                    />
+                </div>

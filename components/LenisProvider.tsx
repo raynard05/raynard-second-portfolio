@@ -26,7 +26,7 @@ export default function LenisProvider({ children }: LenisProviderProps) {
             orientation: 'vertical',
             gestureOrientation: 'vertical',
             smoothWheel: true,
-            wheelMultiplier: 0.3,
+            wheelMultiplier: 0.6,
             infinite: false,
         });
 

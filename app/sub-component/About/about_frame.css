@@ -1,0 +1,286 @@
+/* About Frame Section - Standalone section with pinning */
+.about-frame-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, white 0%, rgba(0, 0, 0, 0.144) 100%);
+    overflow: hidden;
+    margin-top: 0;
+    /* No gap between sections */
+}
+
+/* About Frame Container - Transparent Background */
+.about-frame-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    padding: 5rem 0;
+    z-index: 10;
+    right: 370px;
+    top: -50px;
+}
+
+.about-frame-inner {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 5rem;
+    padding-right: 4rem;
+    overflow-x: visible;
+    /* Allow cards to extend horizontally */
+}
+
+/* Raynard Skills Text - Floating, doesn't affect layout */
+.raynard-skills-text {
+    position: absolute;
+    top: 7%;
+    left: 96%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1.1;
+}
+
+/* Second line - gray/transparent */
+.raynard-skills-text span {
+    color: rgb(160, 160, 160);
+    padding-left: 12rem;
+    display: inline-block;
+}
+
+
+
+/* Card Wrapper - Individual positioning container */
+.card-wrapper {
+    position: relative;
+    width: 80%;
+    margin-bottom: 6rem;
+}
+
+/* Individual Card Wrappers - Customize position for each card */
+.card-wrapper-01 {
+    /* Card 1 position - Customize here */
+    transform: translateX(70px);
+    /* Add more properties as needed:
+       margin-top: -500px;
+       rotate: 3deg;
+       scale: 0.98;
+       width: 90%;
+    */
+}
+
+.card-wrapper-02 {
+    /* Card 2 position - Customize here */
+    transform: translateX(140px);
+    margin-top: -570px;
+    scale: 0.98;
+}
+
+.card-wrapper-03 {
+    /* Card 3 position - Customize here */
+    transform: translateX(230px);
+    margin-top: -530px;
+}
+
+.card-wrapper-04 {
+    /* Card 4 position - Customize here */
+    transform: translateX(340px);
+    margin-top: -570px;
+}
+
+.card-wrapper-05 {
+    /* Card 5 position - Customize here */
+    transform: translateX(480px);
+    margin-top: -580px;
+    width: 80%;
+
+}
+
+.card-wrapper-06 {
+    /* Card 6 position - Customize here */
+    transform: translateX(580px);
+    margin-top: -540px;
+
+}
+
+.card-wrapper-07 {
+    /* Card 7 position - Customize here */
+    transform: translateX(690px);
+    margin-top: -570px;
+
+}
+
+.card-wrapper-08 {
+    /* Card 8 position - Customize here */
+    transform: translateX(900px);
+    margin-top: -550px;
+
+}
+
+/* Card Styling - Static Display */
+.about-frame-card {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 0;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform-origin: top center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-frame-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translate3d(0, -5px, 0) !important;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 5rem;
+}
+
+/* Large Number - Yellow Color */
+.card-number {
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 0.9;
+    color: rgba(255, 217, 0, 0.8);
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 8rem;
+}
+
+/* Title - Black, Uppercase */
+.card-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #000;
+    margin: 0;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    max-width: 600px;
+}
+
+/* Subtitle - Gray, Uppercase */
+.card-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    max-width: 500px;
+}
+
+/* Description - Dark Gray */
+.card-description {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-frame-inner {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .about-frame-card {
+        min-height: 450px;
+        padding: 2.5rem;
+    }
+
+    .card-number {
+        font-size: 8rem;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .card-text {
+        padding-top: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-frame-container {
+        padding: 3rem 0;
+    }
+
+    .about-frame-inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .about-frame-card {
+        min-height: 400px;
+        padding: 2rem;
+    }
+
+    .card-number {
+        font-size: 6rem;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .card-text {
+        padding-top: 5rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-subtitle {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-frame-card {
+        min-height: 350px;
+        padding: 1.5rem;
+    }
+
+    .card-number {
+        font-size: 5rem;
+    }
+
+    .card-text {
+        padding-top: 4rem;
+    }
+}

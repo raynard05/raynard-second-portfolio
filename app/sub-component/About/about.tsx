@@ -13,6 +13,7 @@ import Noise from "@/components/Noise";
 import Spline from "@splinetool/react-spline";
 import SplitText from "@/components/SplitText";
 import MetaBalls from "@/components/MetaBalls";
+import AboutFrame from '@/app/sub-component/About/about_frame';
 
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
 
@@ -39,7 +40,7 @@ const LinePath = ({
     // window animasi yang stabil
     const pathLength = useTransform(
         scrollYProgress,
-        [0.01, 0.4],
+        [0.01, 1],
         [0, 1],
         { clamp: true }
     );
@@ -121,16 +122,7 @@ const LinePath2 = ({
             </defs>
 
             <motion.path
-                d="
-      M 3800 600
-      C 2400 500, 2200 720, 1800 560
-      S 1500 150, 1700 520
-      S 900 820, 600 600
-      S 300 1200, 300 1200
-      S 300 1200, 300 1200
-      S 300 1200, 300 1200
-
-    "
+             
                 stroke="#fffb00ff"
                 strokeWidth="20"
                 fill="none"
@@ -370,126 +362,13 @@ export default function About() {
                             <img src="/signature.png" alt="Signature" />
                         </div>
                     </div>
-                    <div className="what-i-do">
-                        <div className="scrollstack-wrapper">
-                            {/* ScrollStack Section - Left Side */}
-
-
-                            {/* Header Text - Right Side */}
-                            <div className="scrollstack-header">
-                                <h2 className={`scrollstack-title ${bbhBartle.className}`}>
-                                    RAYNARD BRINGS
-                                </h2>
-                                <h2 className={`scrollstack-subtitle ${bbhBartle.className}`}>
-                                    THE SKILLS
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="scrollstack-content">
-                            <ScrollStack
-                                itemDistance={60}
-                                itemScale={0.025}
-                                itemStackDistance={35}
-                                stackPosition="15%"
-                                useWindowScroll={true}
-
-                            >
-                                <ScrollStackItem
-                                    number="01"
-                                    title="TECHNICAL SKILLS"
-                                    subtitle="FULL-STACK DEVELOPMENT"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Proficient in React, Next.js, TypeScript, Node.js, and modern web technologies.
-                                        Building scalable applications with clean architecture and best practices.
-                                    </p>
-                                </ScrollStackItem>
-
-                                <ScrollStackItem
-                                    number="02"
-                                    title="CREATIVE DESIGN"
-                                    subtitle="UI/UX EXCELLENCE"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Crafting stunning user interfaces with attention to detail.
-                                        Combining aesthetics with functionality for exceptional user experiences.
-                                    </p>
-                                </ScrollStackItem>
-
-                                <ScrollStackItem
-                                    number="03"
-                                    title="APPLICATION & SYSTEMS"
-                                    subtitle="MOBILE · DESKTOP · IOT"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Building Android applications with Flutter and desktop systems using Java (NetBeans).
-                                        Also experienced in IoT solutions powered by MQTT with Mosquitto brokers.
-                                    </p>
-
-                                </ScrollStackItem>
-
-                                <ScrollStackItem
-                                    number="04"
-                                    title="TECHNOLOGY STACK"
-                                    subtitle="DATABASES & LANGUAGES"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Experienced with MySQL, PostgreSQL, Supabase, and Firebase.
-                                        Proficient in PHP, JavaScript, TypeScript, Dart, Python, and continuously exploring new technologies.
-                                    </p>
-
-                                </ScrollStackItem>
-
-
-                                <ScrollStackItem
-                                    number="05"
-                                    title="PROFESSIONAL EXPERIENCE"
-                                    subtitle="2+ YEARS IN DEVELOPMENT"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Building creative web experiences and applications.
-                                        From concept to deployment, delivering high-quality solutions.
-                                    </p>
-                                </ScrollStackItem>
-
-                                <ScrollStackItem
-                                    number="06"
-                                    title="PROBLEM SOLVING"
-                                    subtitle="ANALYTICAL MINDSET"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Deconstructing complexity into elegant, scalable systems.
-                                        Performance, structure, and clarity at the core of every solution.
-                                    </p>
-                                </ScrollStackItem>
-
-                                <ScrollStackItem
-                                    number="07"
-                                    title="CONTINUOUS LEARNING"
-                                    subtitle="ALWAYS EVOLVING"
-                                >
-                                    <p className="text-black/60 mt-4 max-w-md">
-                                        Staying current with latest technologies and best practices.
-                                        Curious by nature, always exploring new ways to innovate.
-                                    </p>
-                                </ScrollStackItem>
-                            </ScrollStack>
-                        </div>
-
-
-
-
-                    </div>
-                    {/* ScrollStack Container */}
-
-
-                </div>
-                <div>
-
 
                 </div>
 
             </section>
+            
+            {/* AboutFrame as separate section */}
+
         </>
     );
 }

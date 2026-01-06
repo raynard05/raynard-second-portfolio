@@ -11,6 +11,7 @@ import logo from '@/public/logo.webp';
 import About from '@/app/sub-component/About/about';
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { BBH_Bartle } from "next/font/google";
+import AboutFrame from "@/app/sub-component/About/about_frame";
 
 
 const bbhBartle = BBH_Bartle({
@@ -65,6 +66,9 @@ export default function Home() {
             className={`velocity-text ${bbhBartle.className} `}
           />
           <About />
+          <section id="test-aboutframe">
+            <AboutFrame />
+          </section>
 
         </LenisProvider>
       )}

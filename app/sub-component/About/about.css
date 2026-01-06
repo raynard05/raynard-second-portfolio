@@ -32,13 +32,15 @@
 .about-content-section {
     position: relative;
     width: 100%;
-    min-height: 150vh;
+    min-height: auto;
     background: white;
     padding: 8rem 2rem;
+    padding-bottom: 15rem;
+    /* Extra padding for smooth transition */
     z-index: 10;
     font-family: var(--font-satoshi), sans-serif;
-    overflow: hidden;
-    /* Ensure particles don't overflow */
+    overflow: visible;
+    /* Allow content to flow naturally */
 }
 
 /* Spline 3D Background - Fixed in place */
@@ -410,21 +412,21 @@
 .scrollstack-content {
     position: relative;
     width: 100%;
-    margin-left: -300px;
-    margin-top: 270px;
+    margin-left: -420px;
+    margin-top: 300px;
 }
 
 /* ScrollStack Header - Top Right */
 .scrollstack-header {
     position: absolute;
     top: 0;
-    right: 4rem;
+    right: 2rem;
     z-index: 100;
     text-align: right;
 }
 
 .scrollstack-title {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: 45px;
     font-weight: 400;
     line-height: 1;
     color: #000;
@@ -434,14 +436,16 @@
 }
 
 .scrollstack-subtitle {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: 55px;
     font-weight: 400;
     line-height: 1;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgb(122, 122, 122);
     margin: 0;
     letter-spacing: -0.01em;
     text-transform: uppercase;
 }
+
+.what-i-do {}
 
 /* Responsive for ScrollStack Wrapper */
 @media (max-width: 1024px) {

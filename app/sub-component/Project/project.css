@@ -1,0 +1,34 @@
+.project-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, black 0%, black 70%, rgba(0, 0, 0, 0.521) 100%);
+}
+
+.project-spline {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    width: 150%;
+    height: 150%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.project-spline canvas {
+    touch-action: none !important;
+    user-select: none !important;
+}
+
+/* Hide Spline watermark */
+.project-spline #logo,
+.project-spline [id*="logo"],
+.project-spline [class*="logo"],
+.project-spline a[href*="spline"] {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}

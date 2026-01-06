@@ -196,7 +196,7 @@ const AboutFrame: React.FC = () => {
     return (
         <section className="about-frame-section" ref={sectionRef}>
             {/* Background matching about.tsx */}
-            <div className="gridsection-background"></div>
+
 
             {/* Particles matching about.tsx */}
             <Particles

@@ -122,7 +122,7 @@ const LinePath2 = ({
             </defs>
 
             <motion.path
-             
+
                 stroke="#fffb00ff"
                 strokeWidth="20"
                 fill="none"
@@ -305,7 +305,7 @@ export default function About() {
 
             {/* Content Section - Appears after white background */}
             <section className="about-content-section">
-                <div className="gridsection-background"></div>
+
 
                 {/* Spline 3D Background - Fixed */}
 
@@ -366,7 +366,7 @@ export default function About() {
                 </div>
 
             </section>
-            
+
             {/* AboutFrame as separate section */}
 
         </>

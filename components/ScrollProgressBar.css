@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 6px;
     background: transparent;
     z-index: 9999;
     pointer-events: none;
@@ -11,7 +11,7 @@
 
 .scroll-progress-bar {
     height: 100%;
-    background: rgb(77, 77, 77);
+    background: rgb(255, 230, 0);
     transition: width 0.1s ease-out;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 217, 2, 0.822);
 }

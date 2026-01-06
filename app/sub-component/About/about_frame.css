@@ -3,7 +3,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(to bottom, white 0%, rgba(0, 0, 0, 0.144) 100%);
+    background: white;
     overflow: hidden;
     margin-top: 0;
     /* No gap between sections */

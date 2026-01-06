@@ -12,6 +12,7 @@ import About from '@/app/sub-component/About/about';
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { BBH_Bartle } from "next/font/google";
 import AboutFrame from "@/app/sub-component/About/about_frame";
+import Project from "@/app/sub-component/Project/project";
 
 
 const bbhBartle = BBH_Bartle({
@@ -69,7 +70,26 @@ export default function Home() {
           <section id="test-aboutframe">
             <AboutFrame />
           </section>
-
+          <svg
+            className="wave-seperator"
+            viewBox="0 0 1200 140"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="
+        M0 40
+        H400
+        C450 40 480 0 550 0
+        H1200
+        V140
+        H0
+        Z
+      "
+              fill="#000000ff"
+            />
+          </svg>
+          <Project />
         </LenisProvider>
       )}
     </>

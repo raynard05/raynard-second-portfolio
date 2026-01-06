@@ -57,3 +57,11 @@ html::-webkit-scrollbar {
 *::-webkit-scrollbar {
   display: none;
 }
+
+.wave-seperator {
+  display: block;
+  width: 100%;
+  height: 140px;
+  margin-top: -1px;
+  /* anti gap */
+}

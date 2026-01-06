@@ -70,23 +70,16 @@ export default function Home() {
           <section id="test-aboutframe">
             <AboutFrame />
           </section>
+
           <svg
-            className="wave-seperator"
+            className="wave-seperator wave-seperator-2"
             viewBox="0 0 1200 140"
             preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="
-        M0 40
-        H400
-        C450 40 480 0 550 0
-        H1200
-        V140
-        H0
-        Z
-      "
-              fill="#000000ff"
+              d="     M -3 94 H 417 C 460 60 470 30 520 30 H 760 C 810 30 820 60 857 80 H 1200 V 140 H 0 Z"
+              fill="rgb(56, 56, 56)"
             />
           </svg>
           <Project />
